@@ -1,24 +1,7 @@
 <script lang="jsx">
-import render from '@/components/render/render'
 import {defineComponent, h, createVNode, Fragment, toRaw, getCurrentInstance} from "vue";
 import eventBus from '@/utils/eventBus'
 
-const slot = {
-  setup(props, {slots}) {
-    return {
-      item: () => <p>props</p>
-    }
-  },
-}
-const input = (context, currentItem) => {
-  return (
-      <a-col>
-        <a-form-item>
-          <a-input/>
-        </a-form-item>
-      </a-col>
-  )
-}
 const layouts = {
   input(context, currentItem) {
     const {placeholder, label, style} = currentItem
