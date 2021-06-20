@@ -1,17 +1,20 @@
 <script lang="jsx">
-import {defineComponent, h, createVNode, Fragment, toRaw, getCurrentInstance} from "vue";
+import {defineComponent, h, createVNode, Fragment, toRaw, getCurrentInstance} from "vue"
 import eventBus from '@/utils/eventBus'
 
 const layouts = {
   input(context, currentItem) {
-    const {placeholder, label, style} = currentItem
+    const {placeholder, addonAfter, label, style, required} = currentItem
     return (
         <a-col onClick={event => {
           event.stopPropagation()
           eventBus.$emit('action', currentItem)
-        }}>
-          <a-form-item label={label}>
-            <a-input style={{...style}} placeholder={placeholder}/>
+        }}
+        >
+          <a-form-item label={label} required={required}>
+            <a-input style={{...style}} placeholder={placeholder} addonAfter={addonAfter}
+                     disabled={currentItem.disabled}
+            />
           </a-form-item>
         </a-col>
     )
@@ -27,7 +30,8 @@ const layouts = {
           <div className="drawing-row-item">
             <span className="component-name">{currentItem.unitKey}</span>
             <draggable v-model={currentItem.children} group={{name: 'form', pull: true, put: true}} animation="300"
-                       item-key='unitKey' v-slots={slots}/>
+                       item-key="unitKey" v-slots={slots}
+            />
           </div>
         </a-col>
     )
@@ -42,11 +46,13 @@ const layouts = {
         <a-row onClick={event => {
           event.stopPropagation()
           eventBus.$emit('action', currentItem)
-        }}>
+        }}
+        >
           <div className="drawing-row-item">
             <span className="component-name">{currentItem.unitKey}</span>
             <draggable list={currentItem.children || []} group={{name: 'form', pull: true, put: true}} animation="300"
-                       v-slots={slots}/>
+                       v-slots={slots}
+            />
           </div>
         </a-row>
     )

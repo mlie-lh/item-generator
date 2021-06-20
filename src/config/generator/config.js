@@ -17,37 +17,19 @@ export const inputComponents = [
   {
     // 组件的自定义配置
     __config__: {
-      type: 'input',
       label: '单行文本',
-      labelWidth: null,
-      showLabel: true,
-      changeTag: true,
-      tag: 'a-input',
-      tagIcon: 'input',
-      defaultValue: undefined,
-      required: true,
-      layout: 'colFormItem',
-      span: 24,
-      document: 'https://element.eleme.cn/#/zh-CN/component/input',
-      // 正则校验规则
-      regList: []
-    },
-    // 组件的插槽属性
-    __slot__: {
-      prepend: '',
-      append: ''
+      type: 'input',
+      span: 24
     },
     // 其余的为可直接写在组件标签上的属性
-    label:'文本框',
-    placeholder: '请输入',
-    style: {width: '100%'},
-    clearable: true,
-    'prefix-icon': '',
-    'suffix-icon': '',
-    maxlength: null,
-    'show-word-limit': false,
-    readonly: false,
-    disabled: false
+    label: '单行文本',
+    placeholder: '',
+    addonAfter: '',
+    addonBefore: '',
+    disabled: false,
+    required: false,
+    allowClear: true,
+    type: 'text'
   },
   {
     __config__: {
@@ -55,11 +37,10 @@ export const inputComponents = [
       layout: 'rowFormItem',
       tagIcon: 'row',
       label: '行容器',
-      layoutTree: true,
-      document: 'https://element.eleme.cn/#/zh-CN/component/layout#row-attributes'
+      layoutTree: true
     },
     type: 'default',
-    children:[],
+    children: [],
     justify: 'start',
     align: 'top'
   }
