@@ -1,6 +1,8 @@
 <template>
   <div class="left-board">
-    <div class="logo-wrapper"></div>
+    <div class="logo-wrapper">
+      <a href="https://mlielh.com/lab" target="_Blank">lab</a>
+    </div>
     <div class="components-list">
       <div>
         <div class="components-title" v-for="(item,index) in leftComponents">
@@ -60,3 +62,10 @@ const move = e => {
 const end = e => {
 }
 </script>
+<style lang="less">
+.logo-wrapper{
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+</style>

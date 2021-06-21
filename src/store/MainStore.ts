@@ -1,6 +1,6 @@
-import {reactive} from "vue";
+import {reactive} from "vue"
 // @ts-ignore
-import {IStore} from "@/store";
+import {IStore} from "@/store"
 
 /**
  * IUserState
@@ -10,11 +10,13 @@ declare interface IMainState {
 }
 
 const state: IMainState = reactive({
-    controls: {}
-});
+    controls: {},
+    showDrawer: false,
+    makeData:[]
+})
 const store: IStore<IMainState> = {
-    persistedState: true,
-    state: state,
-};
-export default store;
-export {state, IMainState};
+    persistedState: false,
+    state: state
+}
+export default store
+export {state, IMainState}
