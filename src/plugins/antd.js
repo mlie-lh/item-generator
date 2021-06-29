@@ -1,4 +1,4 @@
-import {Button, Col, Divider, Form, Input, Row, Switch, Drawer, Tabs} from "ant-design-vue"
+import {Button, Col, Divider, Form, Input, Row, Switch, Drawer, Tabs, Radio, Slider} from "ant-design-vue"
 
 export default {
   install: (app, options) => {
@@ -11,5 +11,7 @@ export default {
     app.use(Col)
     app.use(Row)
     app.use(Drawer)
+    app.use(Radio)
+    app.use(Slider)
   }
 }

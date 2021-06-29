@@ -15,7 +15,7 @@
 </template>
 
 <script setup>
-import draggableItem from '@/components/draggableItem/index.vue'
+import draggableItem from '@/components/draggableItem/index.jsx'
 import {ref, watch, watchEffect, toRaw, useContext, inject} from "vue"
 import eventBus from '@/utils/eventBus'
 import {findNode} from '@/utils/index'

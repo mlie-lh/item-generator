@@ -18,30 +18,35 @@ export const inputComponents = [
     // 组件的自定义配置
     __config__: {
       label: '单行文本',
-      type: 'input',
-      span: 24
+      tag: 'a-input',
+      layout: 'formItem'
     },
-    // 其余的为可直接写在组件标签上的属性
-    label: '单行文本',
-    placeholder: '',
-    addonAfter: '',
-    addonBefore: '',
-    disabled: false,
-    required: false,
-    allowClear: true,
-    type: 'text'
-  },
+    tagConfig: {
+      placeholder: '', // 占位
+      addonAfter: '', // 后置标签
+      addonBefore: '', // 前置标签
+      disabled: false, // 是否
+      allowClear: false // 清空
+    },
+    itemConfig: {
+      label: '单行文本', // label
+      required: false, // 是否必填
+      span: 6
+    }
+  }
+]
+// 布局型组件 【左面板】
+export const layoutComponents = [
   {
     __config__: {
-      type: 'row',
-      layout: 'rowFormItem',
-      tagIcon: 'row',
       label: '行容器',
-      layoutTree: true
+      tag: 'a-row',
+      layout: 'row'
     },
-    type: 'default',
-    children: [],
-    justify: 'start',
-    align: 'top'
+    tagConfig: {
+      align: '',
+      justify: '',
+      isFlex: false
+    }
   }
 ]

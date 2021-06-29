@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import {inject, ref, watchEffect} from 'vue'
+import {inject, ref, watchEffect,toRaw} from 'vue'
 import loadMonaco from '../../utils/loadMonaco'
 import loadBeautifier from '../../utils/loadBeautifier'
 import beautifierConf from '../../config/beautifierConf'
@@ -41,7 +41,7 @@ let beautifier, monaco
 const htmlCode = ref('')
 const jsCode = ref('')
 const initDrawer = () => {
-  htmlCode.value = makeUpHtml()
+  htmlCode.value = makeUpHtml(toRaw(mainState.makeData))
   // jsCode.value = makeUpJs()
 
   loadBeautifier(btf => {
@@ -50,7 +50,7 @@ const initDrawer = () => {
     jsCode.value = beautifier.js(jsCode.value, beautifierConf.js)
     loadMonaco(val => {
       monaco = val
-      setEditorValue('editorHtml', 'html', makeUpHtml())
+      setEditorValue('editorHtml', 'html',  htmlCode.value)
     })
   })
 }

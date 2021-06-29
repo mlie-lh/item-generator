@@ -33,19 +33,24 @@
 
 <script setup>
 import {ref, inject} from "vue";
-import {inputComponents} from '@/config/generator/config'
+import {inputComponents,layoutComponents} from '@/config/generator/config'
 import {UUID, deepClone} from "@/utils";
+import {} from "../../config/generator/config"
 
 const leftComponents = [
   {
     title: '输入型组件',
     list: inputComponents
+  },
+  {
+    title: '布局型组件',
+    list: layoutComponents
   }
 ]
 const mainStore = inject('mainStore')
 
 function initItemParams(item) {
-  const unitKey = `${item.__config__.type}-${UUID()}`
+  const unitKey = `${item.__config__.label}-${UUID()}`
   return deepClone({...item, unitKey})
 }
 
