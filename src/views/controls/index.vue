@@ -12,7 +12,7 @@
               <a-form-item v-if="form.itemConfig.required !== undefined" label="是否必填">
                 <a-switch v-model:checked="form.itemConfig.required"/>
               </a-form-item>
-              <a-form-item v-if="form.itemConfig.span !== undefined" label="是否必填">
+              <a-form-item v-if="form.itemConfig.span !== undefined" label="栅格占位">
                 <a-slider v-model:value="form.itemConfig.span"
                           :min="0"
                           :max="24"

@@ -46,7 +46,9 @@ export const layoutComponents = [
     tagConfig: {
       align: '',
       justify: '',
-      isFlex: false
-    }
+      gutter: 0,
+      wrap: false
+    },
+    list: []
   }
 ]
