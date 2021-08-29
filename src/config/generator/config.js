@@ -19,17 +19,57 @@ export const inputComponents = [
     __config__: {
       label: '单行文本',
       tag: 'a-input',
-      layout: 'formItem'
+      layout: 'colFormItem'
     },
     tagConfig: {
       placeholder: '', // 占位
       addonAfter: '', // 后置标签
       addonBefore: '', // 前置标签
       disabled: false, // 是否
-      allowClear: false // 清空
+      allowClear: false, // 清空
     },
     itemConfig: {
       label: '单行文本', // label
+      required: false, // 是否必填
+      span: 6
+    }
+  },
+  {
+    // 组件的自定义配置
+    __config__: {
+      label: '数字输入框',
+      tag: 'a-input-number',
+      layout: 'colFormItem'
+    },
+    tagConfig: {
+      placeholder: '', // 占位
+      addonAfter: '', // 后置标签
+      addonBefore: '', // 前置标签
+      disabled: false, // 是否
+      allowClear: false, // 清空
+    },
+    itemConfig: {
+      label: '数字输入框', // label
+      required: false, // 是否必填
+      span: 6
+    }
+  },
+  {
+    // 组件的自定义配置
+    __config__: {
+      label: '选择框',
+      tag: 'a-select',
+      layout: 'colFormItem'
+    },
+    tagConfig: {
+      placeholder: '', // 占位
+      addonAfter: '', // 后置标签
+      addonBefore: '', // 前置标签
+      disabled: false, // 是否
+      allowClear: false, // 清空
+    },
+    itemConfig: {
+      label: '选择框', // label
       required: false, // 是否必填
       span: 6
     }
@@ -41,14 +81,13 @@ export const layoutComponents = [
     __config__: {
       label: '行容器',
       tag: 'a-row',
-      layout: 'row'
+      layout: 'rowFormItem'
     },
     tagConfig: {
       align: '',
       justify: '',
-      gutter: 0,
-      wrap: false
+      isFlex: false
     },
-    list: []
+    children: []
   }
 ]

@@ -11,8 +11,9 @@ declare interface IMainState {
 
 const state: IMainState = reactive({
     controls: {},
+    curUnitKey: '',
     showDrawer: false,
-    makeData:[]
+    makeData: []
 })
 const store: IStore<IMainState> = {
     persistedState: false,

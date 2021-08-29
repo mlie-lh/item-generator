@@ -85,65 +85,33 @@
     background-color: #f6f7ff;
   }
 }
-// 行容器
-.drawing-row-item {
+// 容器-item
+.drawing-item {
   position: relative;
-  cursor: move;
-  min-height: 80px;
-  width: 100%;
+  min-height: 60px;
   box-sizing: border-box;
+  padding: 3px;
+  margin: 5px 0;
   border: 1px dashed #ccc;
-  border-radius: 3px;
-  padding: 10px 3px;
-  margin: 10px 0 0;
-  .component-name {
-    position: absolute;
-    top: 0;
-    left: 0;
-    white-space: nowrap;
-    font-size: 10px;
-    line-height: 1;
-    color: #bbb;
-    display: inline-block;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-all;
+  width: 100%;
+  &.active {
+    border: 1px dashed #409eff;
   }
 }
-.row-wrap {
-  position: relative;
-  border: 1px dotted transparent;
-  .grid-wrap {
-    border: 1px dotted #409eff;
-    position: relative;
-    padding: 0 12px;
-    &:hover {
-      border: 1px solid #409eff;
-      .grid-col {
-        border-style: solid;
-      }
-    }
-    &.active {
-      border: 3px solid #409eff;
-    }
-    .grid-col {
-      border: 1px dotted #409eff;
-      .grid-control-wrap {
-        height: 100%;
-        min-height: 80px;
-        padding: 5px;
-      }
-    }
+.drawing-box{
+  min-height: 60px;
+}
+.drawing-form-item{
+  padding: 5px;
+  margin: 5px 0;
+  &.active {
+   background: #e2e2e2;
   }
+}
 
-  .control-item {
-    position: relative;
-    border: 1px solid transparent;
-    &:hover {
-      border: 1px dotted rgba(53,201,160,1);
-    }
-    &.active {
-      border: 3px solid rgba(53,201,160,1);
-    }
-  }
-}
 //.active {
 //  border-style: solid;
 //}

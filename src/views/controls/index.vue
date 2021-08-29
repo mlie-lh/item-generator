@@ -5,16 +5,16 @@
         <div class="board-pane">
           <a-form :model="form" :labelCol="{span: 6}" :wrapperCol="{span: 18}">
             <div v-if="form.itemConfig">
-              <a-divider dashed orientation="left">item属性</a-divider>
+              <a-divider orientation="left">item属性</a-divider>
               <a-form-item v-if="form.itemConfig.label !== undefined" label="标签名">
                 <a-input v-model:value="form.itemConfig.label"/>
               </a-form-item>
-              <a-form-item v-if="form.itemConfig.required !== undefined" label="是否必填">
-                <a-switch v-model:checked="form.itemConfig.required"/>
-              </a-form-item>
+<!--              <a-form-item v-if="form.itemConfig.required !== undefined" label="是否必填">-->
+<!--                <a-switch v-model:checked="form.itemConfig.required"/>-->
+<!--              </a-form-item>-->
               <a-form-item v-if="form.itemConfig.span !== undefined" label="栅格占位">
                 <a-slider v-model:value="form.itemConfig.span"
-                          :min="0"
+                          :min="2"
                           :max="24"
                           :marks="{4:4,8:8,12:12,24:24}"
                           :step="2"
@@ -22,7 +22,7 @@
               </a-form-item>
             </div>
             <div v-if="form.tagConfig">
-              <a-divider dashed orientation="left">tag属性</a-divider>
+              <a-divider orientation="left">tag属性</a-divider>
               <!--input-->
               <a-form-item v-if="form.tagConfig.placeholder !== undefined" label="占位">
                 <a-input v-model:value="form.tagConfig.placeholder"/>
@@ -61,11 +61,11 @@
 </template>
 
 <script setup>
-import {inject, watch, ref, reactive} from "vue"
+import {inject, watch, ref, reactive, computed} from "vue"
 
 const currentTab = ref('1')
 const mainState = inject('mainStore')
-
+const curUnitKey = computed(() => mainState.curUnitKey)
 const form = ref({})
 watch(() => mainState.controls, nVal => {
   console.log(nVal)

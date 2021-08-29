@@ -32,7 +32,7 @@
 </template>
 
 <script setup>
-import {ref, inject} from "vue";
+import {ref, inject,reactive} from "vue";
 import {inputComponents,layoutComponents} from '@/config/generator/config'
 import {UUID, deepClone} from "@/utils";
 import {} from "../../config/generator/config"
@@ -50,8 +50,8 @@ const leftComponents = [
 const mainStore = inject('mainStore')
 
 function initItemParams(item) {
-  const unitKey = `${item.__config__.label}-${UUID()}`
-  return deepClone({...item, unitKey})
+  const unitKey = UUID()
+  return reactive(deepClone({...item, unitKey}))
 }
 
 const clone = e => {

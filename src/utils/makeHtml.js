@@ -22,7 +22,7 @@ const tags = {
 }
 
 const layouts = {
-  formItem(scheme) {
+  colFormItem(scheme) {
     const {
       itemConfig: {label, required},
       __config__: {tag}
@@ -32,7 +32,7 @@ const layouts = {
     str = colWrapper(scheme, str)
     return str
   },
-  row(scheme) {
+  rowFormItem(scheme) {
     const children = scheme.children.map(el => layouts[el.__config__.layout](el))
     return `<a-row>
       ${children.join('\n')}
